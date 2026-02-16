@@ -46,11 +46,12 @@ if ('DeviceMotionEvent' in window) {
         const totalAcc = Math.sqrt(acc.x**2 + acc.y**2 + acc.z**2);
         
         // Seuil de détection d'un pas (à ajuster selon les tests)
-        if (totalAcc > 15) { 
+        if (totalAcc > 5) { 
             currentSteps++;
             updateUI();
         }
     });
 } else {
     alert("Le capteur de mouvement n'est pas supporté sur ce navigateur.");
+
 }
