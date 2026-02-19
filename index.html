@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DetoxMove</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+</head>
+<body>
+    <div id="install-overlay" class="overlay">
+        <div class="overlay-content">
+            <h1>Bienvenue sur DetoxMove</h1>
+            <p>Pour commencer le défi et débloquer votre téléphone, vous devez d'abord installer l'application.</p>
+            <button id="install-btn-giant">📲 INSTALLER MAINTENANT</button>
+            <p class="ios-hint" id="ios-hint">Sur iPhone : cliquez sur Partager <br> puis "Sur l'écran d'accueil"</p>
+        </div>
+    </div>
+
+    <div id="lock-overlay" class="overlay overlay-hidden">
+        <div class="overlay-content">
+            <h1>ÉCRAN VERROUILLÉ</h1>
+            <p>Marchez pour débloquer</p>
+            <div class="giant-steps" id="giant-counter">0</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Detox Move</h1>
+        <div id="timer-display" class="timer-hidden">
+            LIBERTÉ : <span id="seconds">20</span>s
+        </div>
+        <div class="progress-box">
+            <div class="progress-info">
+                <span id="step-counter">0</span>
+                <small>/ <span id="goal-display">1000</span></small>
+            </div>
+            <div class="progress-bar-container">
+                <div id="progress-fill"></div>
+            </div>
+        </div>
+        <div class="settings">
+            <input type="number" id="step-input" placeholder="Objectif">
+            <button onclick="updateGoal()">Valider</button>
+        </div>
+    </div>
+
+    <audio id="alarm-sound" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+    <script src="app.js"></script>
+</body>
+</html>
