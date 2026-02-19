@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DetoxMove - ULTIMATE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+</head>
+<body onclick="initAudio()">
+
+    <div id="install-overlay" class="overlay">
+        <div class="overlay-content">
+            <h1>DETOX MOVE</h1>
+            <p>Appuyez n'importe où pour activer l'alarme et démarrer.</p>
+            <button id="install-btn-giant">📲 ACTIVER & INSTALLER</button>
+        </div>
+    </div>
+
+    <div id="lock-overlay" class="overlay overlay-hidden">
+        <div class="overlay-content">
+            <h1 class="emergency-text">STOP !</h1>
+            <p class="sub-text">ÉCRAN BLOQUÉ</p>
+            <div class="giant-steps neon-green" id="giant-counter">0</div>
+            <p class="instruction">MARCHEZ POUR DÉBLOQUER</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Detox Move</h1>
+        <div id="timer-display" class="timer-hidden">
+            ⚡ LIBERTÉ : <span id="seconds">20</span>s
+        </div>
+        <div class="progress-box">
+            <div class="progress-info">
+                <span id="step-counter">0</span>
+                <small>/ <span id="goal-display">1000</span></small>
+            </div>
+            <div class="progress-bar-container">
+                <div id="progress-fill"></div>
+            </div>
+        </div>
+        <div class="settings">
+            <input type="number" id="step-input" placeholder="Objectif">
+            <button onclick="updateGoal()">Valider</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
