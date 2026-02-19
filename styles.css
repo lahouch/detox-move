@@ -1,0 +1,51 @@
+:root {
+    --primary: #4CAF50;
+    --danger: #ff0000;
+    --blue: #2196F3;
+}
+
+body { font-family: 'Arial Black', sans-serif; background: #000; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
+
+/* Overlays */
+.overlay { 
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+    background: #000; color: white; display: flex; align-items: center; 
+    justify-content: center; z-index: 9999; text-align: center; padding: 20px; 
+}
+
+.overlay-hidden { display: none; }
+
+/* Animation d'urgence */
+.emergency-text { 
+    font-size: 5rem; color: var(--danger); margin: 0; 
+    animation: blinker 0.5s linear infinite; 
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+.sub-text { font-size: 1.5rem; letter-spacing: 5px; margin-bottom: 10px; color: #fff; }
+
+.giant-steps { font-size: 9rem; font-weight: bold; color: var(--primary); text-shadow: 0 0 20px var(--primary); }
+
+.instruction { font-size: 1.2rem; color: #888; margin-top: 20px; }
+
+/* Bouton Installation */
+#install-btn-giant { 
+    background: var(--blue); color: white; border: none; padding: 20px 40px; 
+    font-size: 1.2rem; font-weight: bold; border-radius: 50px; cursor: pointer; 
+    animation: pulse 1.5s infinite; 
+}
+
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+/* Interface de base */
+.container { background: white; padding: 20px; border-radius: 20px; text-align: center; width: 90%; max-width: 350px; }
+.progress-bar-container { background: #eee; height: 15px; border-radius: 10px; margin: 15px 0; overflow: hidden; }
+#progress-fill { height: 100%; width: 0%; background: var(--danger); transition: 0.3s; }
+.timer-hidden { display: none; }
+#timer-display { background: var(--blue); color: white; padding: 15px; border-radius: 10px; margin-bottom: 10px; font-weight: bold; font-size: 1.2rem; }
+.settings { display: flex; gap: 5px; margin-top: 15px; }
+input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
+button { background: var(--primary); color: white; border: none; padding: 10px; border-radius: 8px; cursor: pointer; font-weight: bold; }
